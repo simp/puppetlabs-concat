@@ -15,6 +15,7 @@
 # @param show_diff
 #   Use metaparam for files to show/hide diffs for reporting when using eyaml
 #   secrets.  Defaults to true
+# @param force Useless param, included for backwards compatbility until modules stop referencing it
 # @param warn
 #   Adds a normal shell style comment top of the file indicating that it is
 #   built by puppet.
@@ -49,6 +50,7 @@ define concat (
   Optional[Variant[String,Integer]] $group                   = undef,
   String                            $mode                    = '0644',
   Variant[Boolean,String]           $warn                    = false,
+  Optional[Any]                     $force                   = undef,
   Boolean                           $show_diff               = true,
   Variant[Boolean,String]           $backup                  = 'puppet',
   Boolean                           $replace                 = true,
